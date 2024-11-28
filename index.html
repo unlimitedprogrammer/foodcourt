@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/outputStyle.css" />
+    <title>Frontend Mentor | Product list with cart</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body class="font-redHat bg-[#f4edeb] text-[#260f08] relative">
+    <div class="container w-[90%] mx-auto py-[5rem]">
+      <div class="grid grid-cols-12 gap-5">
+        <div class="col-span-12 lg:col-span-9 order-2 lg:order-1">
+          <div class="flex flex-col gap-5">
+            <p class="text-[#260f08] text-[30px] font-bold">Desserts</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- 1st -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-waffle-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Waffle</p>
+                  <p class="product-name font-bold">Waffle with Berries</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$6.50</p
+                  >
+                </div>
+              </div>
+              <!-- 2nd -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-creme-brulee-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Crème Brûlée</p>
+                  <p class="product-name font-bold"
+                    >Vanilla Bean Crème Brûlée</p
+                  >
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$7.00</p
+                  >
+                </div>
+              </div>
+              <!-- 3rd -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-macaron-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Macaron</p>
+                  <p class="product-name font-bold">Macaron Mix of Five</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$8.00</p
+                  >
+                </div>
+              </div>
+              <!-- 4th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-tiramisu-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Tiramisu</p>
+                  <p class="product-name font-bold">Classic Tiramisu</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$5.50</p
+                  >
+                </div>
+              </div>
+              <!-- 5th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-baklava-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Baklava</p>
+                  <p class="product-name font-bold">Pistachio Baklava</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$4.00</p
+                  >
+                </div>
+              </div>
+              <!-- 6th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-meringue-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Pie</p>
+                  <p class="product-name font-bold">Lemon Meringue Pie</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$5.00</p
+                  >
+                </div>
+              </div>
+              <!-- 7th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-cake-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Cake</p>
+                  <p class="product-name font-bold">Red Velvet Cake</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$4.50</p
+                  >
+                </div>
+              </div>
+              <!-- 8th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-brownie-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Brownie</p>
+                  <p class="product-name font-bold">Salted Caramel Brownie</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$4.50</p
+                  >
+                </div>
+              </div>
+              <!-- 9th -->
+              <div class="product-container">
+                <img
+                  src="./assets/images/image-panna-cotta-desktop.jpg"
+                  alt=""
+                  class="product-image rounded-[12px] w-full"
+                />
+                <div class="flex justify-center -mt-5 mb-3">
+                  <button
+                    type="submit"
+                    class="addToCart group flex items-center text-[#260f08] hover:text-white gap-3 border border-[#260f08] hover:border-[#c73a0f] py-3 px-7 rounded-[30px] bg-white hover:bg-[#c73a0f]"
+                    id="addToCart"
+                  >
+                    <i
+                      class="fa-solid fa-cart-shopping text-[#c73a0f] group-hover:text-white"
+                    ></i>
+                    <span class="text-[16px] font-medium">Add to Cart</span>
+                  </button>
+                  <button
+                    type="submit"
+                    class="addToCartCounter flex justify-between text-[16px] items-center text-[#fff] border border-[#c73a0f] py-3 px-7 rounded-[30px] bg-[#c73a0f] w-[60%]"
+                    style="display: none"
+                  >
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-decrement-quantity.svg"
+                        alt=""
+                        class="decrement"
+                      />
+                    </div>
+
+                    <span class="counter text-[#fff]">1</span>
+                    <div
+                      class="flex justify-center items-center w-5 h-5 border border-white rounded-full p-1 hover:bg-black"
+                    >
+                      <img
+                        src="assets/images/icon-increment-quantity.svg"
+                        alt=""
+                        class="increment"
+                      />
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                  <p class="product-tag text-[#c9aea6] text-sm">Panna Cotta</p>
+                  <p class="product-name font-bold">Vanilla Panna Cotta</p>
+                  <p class="product-price text-[#c73a0f] font-semibold"
+                    >$6.50</p
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-3 order-1 lg:order-2">
+          <div class="bg-white rounded-[12px] py-[2rem] px-[2rem]">
+            <p class="text-[#c73a0f] text-[30px] font-bold">
+              Your Cart
+              <span class="totalProductUnit">(0)</span>
+            </p>
+            <div class="msg-default text-center mt-10">
+              <div class="flex justify-center">
+                <img
+                  src="assets/images/illustration-empty-cart.svg"
+                  alt=""
+                  class=""
+                />
+              </div>
+              <p>Your added items will appear here</p>
+            </div>
+            <div class="hidden cartDetails-wrap">
+              <div class="cartDetails-div"></div>
+              <!-- Cart Details -->
+              <!-- <div class=""> -->
+              <!-- <div class="cartDetails flex justify-between items-start border-b py-5">
+         <div class="flex flex-col gap-1">
+          <p class="cart-item-name font-bold text-xl text-[#260f08]">
+           Vanilla Bean Crème Brûlée
+          </p>
+          <div class="flex items-center gap-5">
+           <div>
+            <span class="cart-item-unit text-[#c73a0f] font-semibold text-lg"
+             >4x</span
+            >
+           </div>
+           <div>
+            <span class="cart-item-price text-[#c5c4c3] mr-2">@$7.00</span>
+            <span class="cart-item-priceXunits text-[#8b8a8a] font-semibold"
+             >$28.50</span
+            >
+           </div>
+          </div>
+         </div>
+         <a
+          href=""
+          class="removeItem border border-[#c73a0f] p-1 rounded-full hover:border-[#000] group hover:text-[#000]"
+         >
+          <img
+           src="./assets/images/icon-remove-item.svg"
+           class="removeItem w-[15px]"
+           alt=""
+          />
+         </a>
+        </div> -->
+              <!-- </div> -->
+
+              <!-- Cart Order Total -->
+              <div class="flex justify-between items-center py-5">
+                <span
+                  class="orderTotal text-[#777777] font-semibold text-[20px]"
+                >
+                  Order Total
+                </span>
+                <span class="totalOrder font-bold text-[30px]">$46.50</span>
+              </div>
+              <div
+                class="flex gap-1 justify-center items-center bg-[#e7dcd950] py-4 rounded-[10px]"
+              >
+                <img
+                  src="assets/images/icon-carbon-neutral.svg"
+                  alt=""
+                  class="w-[30px]"
+                />
+                <p>
+                  This is a
+                  <span class="font-bold">carbon-neutral</span>
+                  delivery
+                </p>
+              </div>
+              <button
+                class="confirmOrder mt-5 w-full bg-[#c73a0f] py-4 rounded-full text-white font-semibold text-lg"
+              >
+                Confirm order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONFIRM ORDER MODAL -->
+    <div
+      class="hidden modal bg-white rounded-lg p-10 w-[40%] absolute top-[100px] left-[450px] z-10"
+    >
+      <!-- top-[50%] left-[50%] translate-x-1/2 translate-y-1/2 -->
+      <button
+        class="close-modal absolute top-[1rem] right-[2rem] text-[4rem] text-[#c73a0f] font-bold cursor-pointer border-none bg-none"
+        >&times;</button
+      >
+      <img src="assets/images/icon-order-confirmed.svg" alt="" class="mb-5" />
+      <p class="text-[40px] font-bold">Confirm order modal</p>
+      <p class="mb-10">We hope you enjoy your food</p>
+      <div class="bg-[#e7dcd950] rounded-lg p-7 flex flex-col gap-5">
+        <div
+          class="cartDetails flex justify-between items-center border-b pb-3 product-row"
+          data-product-name="${productName}"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/image-waffle-thumbnail.jpg"
+              alt=""
+              class="w-[60px] rounded-lg"
+            />
+            <div class="flex flex-col gap-1">
+              <p>Classic Tiramisu</p>
+              <div class="flex justify-between">
+                <span class="text-[#c73a0f] font-semibold text-lg">1x</span>
+                <span class="text-[#8b8a8a]">@5.50</span>
+              </div>
+            </div>
+          </div>
+          <p class="font-semibold">$5.50</p>
+        </div>
+        <div
+          class="cartDetails flex justify-between items-center border-b pb-3 product-row"
+          data-product-name="${productName}"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/image-waffle-thumbnail.jpg"
+              alt=""
+              class="w-[60px] rounded-lg"
+            />
+            <div class="flex flex-col gap-1">
+              <p>Classic Tiramisu</p>
+              <div class="flex justify-between">
+                <span class="text-[#c73a0f] font-semibold text-lg">1x</span>
+                <span class="text-[#8b8a8a]">@5.50</span>
+              </div>
+            </div>
+          </div>
+          <p class="font-semibold">$5.50</p>
+        </div>
+        <div
+          class="cartDetails flex justify-between items-center border-b pb-3 product-row"
+          data-product-name="${productName}"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              src="assets/images/image-waffle-thumbnail.jpg"
+              alt=""
+              class="w-[60px] rounded-lg"
+            />
+            <div class="flex flex-col gap-1">
+              <p>Classic Tiramisu</p>
+              <div class="flex justify-between">
+                <span class="text-[#c73a0f] font-semibold text-lg">1x</span>
+                <span class="text-[#8b8a8a]">@5.50</span>
+              </div>
+            </div>
+          </div>
+          <p class="font-semibold">$5.50</p>
+        </div>
+        <!-- Order Details -->
+        <div class="flex justify-between items-center">
+          <span>Order Details</span>
+          <span class="text-[30px] font-bold">$46.50</span>
+        </div>
+      </div>
+      <button
+        class="startNewOrder mt-5 w-full bg-[#c73a0f] py-4 rounded-full text-white font-semibold text-lg"
+      >
+        Start New Order
+      </button>
+    </div>
+    <div
+      class="overlay hidden absolute top-0 left-0 w-full h-full bg-[ #000000] opacity-30 backdrop-blur-[3px] z-0"
+    ></div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>
+      . Coded by
+      <a href="#">Sami ❤️💥</a>
+      .
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ca6d471777.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <!-- <script src="scriptV2.js"></script> -->
+  </body>
+</html>
